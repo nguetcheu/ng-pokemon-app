@@ -5,14 +5,16 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class BorderCardDirective {
   constructor(private el: ElementRef) {
-    this.setHeight(180);
+    this.setHeight(160);
     this.setBorder('#f5f5f5');
   }
 
+  // méthode de gestion de l'evenement mouseenter
   @HostListener('mouseenter') onMouseEnter() {
     this.setBorder('#009688');
   }
 
+  // méthode de gestion de l'evenement mouseleave
   @HostListener('mouseleave') onMouseLeave() {
     this.setBorder('#f5f5f5');
   }
@@ -23,6 +25,6 @@ export class BorderCardDirective {
 
   setBorder(color: string) {
     let border = 'solid 4px' + color;
-    this.el.nativeElement.syle.border = border;
+    this.el.nativeElement.style.border = border;
   }
 }
