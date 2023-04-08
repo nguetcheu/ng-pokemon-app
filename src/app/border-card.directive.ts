@@ -32,5 +32,9 @@ export class BorderCardDirective {
   setBorder(color: string) {
     let border = 'solid 4px' + color;
     this.el.nativeElement.style.border = border;
+    /*
+    Ajout de bordure en - - -
+    this.el.nativeElement.style.borderStyle = "dashed";
+    */
   }
 }
