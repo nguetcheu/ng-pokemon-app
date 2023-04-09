@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { POKEMONS } from '../mock-pokemon-list';
 import { Pokemon } from '../pokemon';
+import { POKEMONS } from '../mock-pokemon-list';
 
 @Component({
   selector: 'app-detail-pokemon',
@@ -22,10 +22,10 @@ export class DetailPokemonComponent implements OnInit {
       this.pokemon = this.pokemonList.find(
         (pokemon) => pokemon.id == +pokemonId
       );
-    } 
+    }
   }
 
-  goToPokemonList(){
+  goToPokemonList() {
     this.router.navigate(['/pokemons']);
   }
 }
