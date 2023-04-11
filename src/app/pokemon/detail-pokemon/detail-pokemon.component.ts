@@ -22,11 +22,15 @@ export class DetailPokemonComponent implements OnInit {
     const pokemonId: string | null = this.route.snapshot.paramMap.get('id');
 
     if (pokemonId) {
-      this.pokemon =  this.pokemonService.getPokemonById(+pokemonId);
+      this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
     }
   }
 
   goToPokemonList() {
     this.router.navigate(['/pokemons']);
+  }
+
+  goToEditPokemon(pokemon: Pokemon) {
+    this.router.navigate(['edit/pokemon', pokemon.id]);
   }
 }
